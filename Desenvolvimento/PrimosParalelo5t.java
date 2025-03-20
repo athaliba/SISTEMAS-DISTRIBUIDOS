@@ -19,6 +19,7 @@ public class PrimosParalelo5t {
         return true;
     }
 
+    // método que faz o processamento dos números paralelamente para identificar os que são primos
     public static void processarParalelamente(String arquivoEntrada, String arquivoSaida, int numThreads) {
         List<Integer> numeros = new ArrayList<>();
         long tempoInicial = System.currentTimeMillis();
@@ -82,6 +83,7 @@ public class PrimosParalelo5t {
     }
 
     public static void main(String[] args) {
+        // define 5 threads para processar os números
         processarParalelamente("Entrada01.txt", "SaidaParalelo5t.txt", 5);
     }
 }

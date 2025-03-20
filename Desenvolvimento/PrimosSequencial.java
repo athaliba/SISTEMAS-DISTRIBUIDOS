@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrimosSequencial {
+
+    // método que faz a verificação se o número é primo 
     public static boolean ePrimo(int n) {
         if (n < 2) return false;
         if (n == 2 || n == 3) return true;
@@ -18,6 +20,7 @@ public class PrimosSequencial {
         return true;
     }
 
+    // método que faz o processamento dos números de forma sequencial para identificar os que são primos
     public static void processarSequencialmente(String arquivoEntrada, String arquivoSaida) {
         
         List<Integer> numeros = new ArrayList<>();
@@ -34,8 +37,6 @@ public class PrimosSequencial {
             return;
         }
         
-        
-
         for (int num : numeros) {
             if (ePrimo(num)) {
                 primos.add(String.valueOf(num));

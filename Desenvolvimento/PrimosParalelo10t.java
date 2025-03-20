@@ -4,6 +4,7 @@ import java.util.concurrent.*;
 
 public class PrimosParalelo10t {
 
+    // método que faz a verificação se o número é primo 
     public static boolean ePrimo(int n) {
         if (n < 2) return false;
         if (n == 2 || n == 3) return true;
@@ -19,6 +20,7 @@ public class PrimosParalelo10t {
         return true;
     }
 
+    // método que faz o processamento dos números paralelamente para identificar os que são primos
     public static void processarParalelamente(String arquivoEntrada, String arquivoSaida, int numThreads) {
         List<Integer> numeros = new ArrayList<>();
         long tempoInicial = System.currentTimeMillis();
@@ -82,6 +84,7 @@ public class PrimosParalelo10t {
     }
 
     public static void main(String[] args) {
+        // define 10 threads para processar os números
         processarParalelamente("Entrada01.txt", "SaidaParalelo10t.txt", 10);
     }
 }
