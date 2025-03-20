@@ -1,10 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
 
-public class Primos5t{
-
+public class PrimosSequencial {
     public static boolean ePrimo(int n) {
         if (n < 2) return false;
         if (n == 2 || n == 3) return true;
@@ -20,10 +18,11 @@ public class Primos5t{
         return true;
     }
 
-    public static void processarEmParalelo(String arquivoEntrada, String arquivoSaida, int numThreads) {
+    public static void processarSequencialmente(String arquivoEntrada, String arquivoSaida) {
         
         List<Integer> numeros = new ArrayList<>();
         List<String> primos = new ArrayList<>();
+        long tempoInicial = System.currentTimeMillis();
         
         try (BufferedReader reader = new BufferedReader(new FileReader(arquivoEntrada))) {
             String linha;
@@ -35,26 +34,13 @@ public class Primos5t{
             return;
         }
         
-        ExecutorService executor = Executors.newFixedThreadPool(numThreads);
-        List<Future<Boolean>> resultados = new ArrayList<>();
+        
 
-        long tempoInicial = System.currentTimeMillis();
-        
         for (int num : numeros) {
-            resultados.add(executor.submit(() -> ePrimo(num)));
-        }
-        
-        for (int i = 0; i < numeros.size(); i++) {
-            try {
-                if (resultados.get(i).get()) {
-                    primos.add(String.valueOf(numeros.get(i)));
-                }
-            } catch (InterruptedException | ExecutionException e) {
-                System.out.println("Erro ao processar número: " + e.getMessage());
+            if (ePrimo(num)) {
+                primos.add(String.valueOf(num));
             }
         }
-        
-        executor.shutdown();
         
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoSaida))) {
             for (String primo : primos) {
@@ -66,10 +52,10 @@ public class Primos5t{
         }
         
         long tempoFinal = System.currentTimeMillis();
-        System.out.printf("Tempo de execução (%d threads): %.4f segundos\n", numThreads, (tempoFinal - tempoInicial) / 1000.0);
+        System.out.printf("Tempo de execucao (sequencial): %.4f segundos\n", (tempoFinal - tempoInicial) / 1000.0);
     }
 
     public static void main(String[] args) {
-        processarEmParalelo("Entrada01.txt", "SaidaParalela_5Threads.txt", 5);
+        processarSequencialmente("Entrada01.txt", "SaidaSequencial.txt");
     }
 }
