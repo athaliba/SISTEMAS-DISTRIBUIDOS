@@ -14,12 +14,12 @@ Os números primos identificados são gravados em um arquivo de saída, mantendo
 ## 📁 Estrutura do Projeto
 
 - PrimosSequencial.java → Implementação sequencial (1 thread)
-- Primos5t.java → Implementação paralela com 5 threads
-- Primos10t.java → Implementação paralela com 10 threads
+- PrimosParalelo5t.java → Implementação paralela com 5 threads
+- PrimosParalelo10t.java → Implementação paralela com 10 threads
 - Entrada01.txt → Arquivo de entrada com os números a serem analisados
 - SaidaSequencial.txt → Resultado da execução sequencial
-- SaidaParalela_5Threads.txt → Resultado da execução com 5 threads
-- SaidaParalela_10Threads.txt → Resultado da execução com 10 threads
+- SaidaParalelo5t.txt → Resultado da execução com 5 threads
+- SaidaParalelo10t.txt → Resultado da execução com 10 threads
 
 ---
 
@@ -44,13 +44,13 @@ Para obter o código do projeto, abra o terminal e execute:
 
    sh
    javac PrimosSequencial.java 
-   javac Primos5t.java 
-   javac Primos10t.java
+   javac PrimosParalelo5t.java 
+   javac PrimosParalelo10t.java
 
 2. *Rodar a versão desejada*  
    No terminal, dentro da pasta do projeto, execute:
 
    ```sh
    java PrimosSequencial
-   java Primos5t
-   java Primos10t
+   java PrimosParalelo5t
+   java PrimosParalelo10t
