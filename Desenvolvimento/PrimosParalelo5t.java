@@ -23,7 +23,6 @@ public class PrimosParalelo5t {
         List<Integer> numeros = new ArrayList<>();
         long tempoInicial = System.currentTimeMillis();
 
-        // Leitura do arquivo
         try (BufferedReader reader = new BufferedReader(new FileReader(arquivoEntrada))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
@@ -34,11 +33,9 @@ public class PrimosParalelo5t {
             return;
         }
 
-        // Criar um pool de threads
         ExecutorService executor = Executors.newFixedThreadPool(numThreads);
         List<Future<List<Integer>>> resultados = new ArrayList<>();
         
-        // Dividir os números em partes para as threads processarem
         int tamanhoParte = (int) Math.ceil((double) numeros.size() / numThreads);
         
         for (int i = 0; i < numThreads; i++) {
@@ -59,7 +56,6 @@ public class PrimosParalelo5t {
             resultados.add(executor.submit(tarefa));
         }
 
-        // Coletar os resultados das threads
         List<Integer> primosFinais = new ArrayList<>();
         for (Future<List<Integer>> futuro : resultados) {
             try {
@@ -71,7 +67,6 @@ public class PrimosParalelo5t {
 
         executor.shutdown();
 
-        // Escrever os primos no arquivo de saída
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoSaida))) {
             for (int primo : primosFinais) {
                 writer.write(String.valueOf(primo));
