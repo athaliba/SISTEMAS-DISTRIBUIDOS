@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "texto": "Qual é a capital da França?",
+        "opcoes": ["Paris", "Londres", "Roma", "Berlim"],
+        "respostaCorreta": "Paris"
+    },
+    {
+        "id": "2",
+        "texto": "Qual é o maior planeta do Sistema Solar?",
+        "opcoes": ["Terra", "Júpiter", "Marte", "Saturno"],
+        "respostaCorreta": "Júpiter"
+    },
+    {
+        "id": "3",
+        "texto": "Qual é o maior oceano do mundo?",
+        "opcoes": ["Atlântico", "Pacífico", "Índico", "Ártico"],
+        "respostaCorreta": "Pacífico"
+    },
+    {
+        "id": "4",
+        "texto": "Quantos continentes existem no mundo?",
+        "opcoes": ["5", "6", "7", "8"],
+        "respostaCorreta": "7"
+    },
+    {
+        "id": "5",
+        "texto": "Qual é a língua mais falada do mundo?",
+        "opcoes": ["Inglês", "Mandarim", "Espanhol", "Árabe"],
+        "respostaCorreta": "Mandarim"
+    },
+    {
+        "id": "6",
+        "texto": "Quem pintou a Mona Lisa?",
+        "opcoes": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Claude Monet"],
+        "respostaCorreta": "Leonardo da Vinci"
+    },
+    {
+        "id": "7",
+        "texto": "Qual é o maior deserto do mundo?",
+        "opcoes": ["Sahara", "Saara", "Antártida", "Gobi"],
+        "respostaCorreta": "Antártida"
+    },
+    {
+        "id": "8",
+        "texto": "Qual é o maior animal terrestre?",
+        "opcoes": ["Elefante", "Girafa", "Baleia Azul", "Rinoceronte"],
+        "respostaCorreta": "Elefante"
+    },
+    {
+        "id": "9",
+        "texto": "Qual é o país com a maior população do mundo?",
+        "opcoes": ["Índia", "China", "EUA", "Brasil"],
+        "respostaCorreta": "China"
+    },
+    {
+        "id": "10",
+        "texto": "Qual é o símbolo químico do ouro?",
+        "opcoes": ["Au", "Ag", "Fe", "Cu"],
+        "respostaCorreta": "Au"
+    }
+]
